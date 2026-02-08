@@ -1,26 +1,76 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@theme {
+  /* Colors */
+  --color-brand-dark: #0a0118;
+  --color-brand-purple: #ff00cc;
+  --color-brand-muted: #b3b3b3;
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  --color-platform-onlyfans-from: #00aff0;
+  --color-platform-onlyfans-to: #0077b5;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  --color-platform-fansly-from: #20c997;
+  --color-platform-fansly-to: #0c8599;
+
+  --color-platform-instagram-from: #f09433;
+  --color-platform-instagram-via: #dc2743;
+  --color-platform-instagram-to: #bc1888;
+
+  --color-platform-telegram-from: #2aabee;
+  --color-platform-telegram-to: #229ed9;
+
+  --color-platform-discord-from: #5865F2;
+  --color-platform-discord-to: #4752C4;
+
+  --color-platform-signal-from: #3a76f0;
+  --color-platform-signal-to: #3a55f0;
+
+  --color-platform-reddit-from: #ff4500;
+  --color-platform-reddit-to: #ff8700;
+
+  /* Animations */
+  --animate-fadeInDown: fadeInDown 0.8s ease-out forwards;
+  --animate-pulse: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+
+  @keyframes fadeInDown {
+    0% {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 }
 
+/* Custom Utilities */
+@utility glass-card {
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.05) 50%, rgba(255, 255, 255, 0) 100%);
+}
+
+@utility glass-effect {
+  backdrop-filter: blur(12px);
+  background-color: rgba(255, 255, 255, 0.05);
+  border-width: 1px;
+  border-color: rgba(255, 255, 255, 0.05);
+}
+
+/* Global Styles */
+:root {
+  --foreground-rgb: 255, 255, 255;
+  --background-start-rgb: 10, 1, 24;
+  --background-end-rgb: 10, 1, 24;
+}
+
 body {
-  background: var(--background);
-  color: var(--foreground);
+  color: rgb(var(--foreground-rgb));
+  background: #0a0118;
   font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+}
+
+.background-glow {
+  background: radial-gradient(circle at 50% 0%, rgba(120, 0, 150, 0.3), transparent 70%);
 }
