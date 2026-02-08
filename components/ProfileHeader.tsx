@@ -7,8 +7,8 @@ export default function ProfileHeader() {
             <div className="relative w-32 h-32 mb-4">
                 <div className="absolute inset-0 rounded-full border-[3px] border-[#ff00cc]/50 shadow-[0_0_20px_rgba(255,0,204,0.3)] z-10 pointer-events-none" />
                 <Image
-                    src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
-                    alt="Luna Rose"
+                    src="/profile.jpg"
+                    alt="ManmohakStree"
                     fill
                     className="rounded-full object-cover p-1"
                     priority
